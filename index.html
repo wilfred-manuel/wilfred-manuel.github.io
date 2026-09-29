@@ -9,26 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>
-    // Apply the saved or linked theme before first paint (e.g. ?theme=mobile)
-    (function () {
-      try {
-        var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme');
-        if (t === 'mobile') document.documentElement.setAttribute('data-theme', 'mobile');
-      } catch (e) {}
-    })();
-  </script>
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-mobile" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="container nav-inner">
       <a href="#top" class="logo">wilfred<span>.dev</span></a>
-      <div class="theme-switch" role="group" aria-label="Portfolio theme">
-        <button type="button" data-set-theme="default">Full Stack</button>
-        <button type="button" data-set-theme="mobile">Mobile</button>
-      </div>
       <nav>
         <a href="#work">Work</a>
         <a href="#about">About</a>
@@ -39,71 +27,124 @@
   </header>
 
   <main id="top">
-    <!-- Hero -->
-    <section class="hero container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <div class="badge reveal">
-            <span class="dot"></span>
-            <span class="only-default">Full Stack Developer at RapidPOS</span>
-            <span class="only-mobile">Mobile Developer · Android &amp; Flutter</span>
+    <!-- Journey: pinned hero that morphs from mobile to full stack as you scroll -->
+    <section class="journey" aria-label="From mobile to full stack">
+      <div class="journey-sticky">
+        <div class="container journey-grid">
+          <div class="journey-text">
+            <div class="stage is-active" data-stage="0">
+              <div class="badge"><span class="dot"></span> Full Stack Developer · Mobile at heart</div>
+              <h1>
+                Hi, I'm Wilfred.<br>
+                I build <span class="gradient-text">apps for your pocket</span>
+                and the web behind them.
+              </h1>
+              <p class="hero-sub">
+                7+ years building Android, Flutter, and web apps, from kiosk and POS apps to .NET APIs
+                and Angular dashboards. Based in Benguet, Philippines.
+              </p>
+              <div class="cta">
+                <a class="btn primary" href="#work">View my work <span aria-hidden="true">→</span></a>
+                <a class="btn ghost" href="#contact">Get in touch</a>
+              </div>
+            </div>
+
+            <div class="stage" data-stage="1">
+              <p class="stage-year">2018</p>
+              <h2>It started on Android.</h2>
+              <p>
+                My first role was building and maintaining a Java Android CRM app, adding features
+                and wiring it up to RESTful APIs.
+              </p>
+              <ul class="stack"><li>Java</li><li>Android</li><li>REST APIs</li></ul>
+            </div>
+
+            <div class="stage" data-stage="2">
+              <p class="stage-year">2019 — 2023</p>
+              <h2>Then I went full stack.</h2>
+              <p>
+                CRM and payment dashboards in JavaScript, REST APIs in C# and .NET, data in Snowflake,
+                and senior roles leading code reviews and training new developers.
+              </p>
+              <ul class="stack"><li>JavaScript</li><li>C#</li><li>.NET</li><li>Snowflake</li></ul>
+            </div>
+
+            <div class="stage" data-stage="3">
+              <p class="stage-year">Today</p>
+              <h2>Mobile and web, end to end.</h2>
+              <p>
+                At RapidPOS I build the whole product: .NET 10 APIs, Angular web apps, and an Android
+                POS app in Kotlin and Jetpack Compose.
+              </p>
+              <ul class="stack"><li>.NET 10</li><li>Angular</li><li>Kotlin</li><li>Jetpack Compose</li></ul>
+            </div>
           </div>
-          <h1 class="reveal only-default">
-            Hi, I'm Wilfred.<br>
-            I build <span class="gradient-text">apps people use</span><br>
-            every day.
-          </h1>
-          <h1 class="reveal only-mobile">
-            Hi, I'm Wilfred.<br>
-            I build <span class="gradient-text">apps that live</span><br>
-            in your pocket.
-          </h1>
-          <p class="hero-sub reveal only-default">
-            7+ years shipping Android apps, .NET APIs, Angular web apps, and Flutter mobile apps,
-            from POS systems to school attendance tracking. Based in Benguet, Philippines.
-          </p>
-          <p class="hero-sub reveal only-mobile">
-            7+ years building mobile apps, from Java and Kotlin Android apps to kiosk and POS
-            apps and a Flutter app on the App Store. Based in Benguet, Philippines.
-          </p>
-          <div class="cta reveal">
-            <a class="btn primary" href="#work">View my work <span aria-hidden="true">→</span></a>
-            <a class="btn ghost" href="#contact">Get in touch</a>
+
+          <!-- Device: a phone that stretches into a browser window -->
+          <div class="journey-device" aria-hidden="true">
+            <div class="device">
+              <div class="phone-notch"></div>
+
+              <div class="phone-ui">
+                <div class="status-bar"><span>9:41</span><span class="status-icons"><i></i><i></i><i></i></span></div>
+                <div class="widget">
+                  <p class="widget-time">Wilfred</p>
+                  <p class="widget-sub">Mobile Developer · PH</p>
+                </div>
+                <div class="app-grid">
+                  <div class="app"><span class="icon i-ramp">QR</span><small>RampGuard</small></div>
+                  <div class="app"><span class="icon i-pos">POS</span><small>RapidPOS</small></div>
+                  <div class="app"><span class="icon i-kotlin">K</span><small>Kotlin</small></div>
+                  <div class="app"><span class="icon i-compose">C</span><small>Compose</small></div>
+                  <div class="app"><span class="icon i-flutter">F</span><small>Flutter</small></div>
+                  <div class="app"><span class="icon i-firebase">Fb</span><small>Firebase</small></div>
+                  <div class="app"><span class="icon i-java">J</span><small>Java</small></div>
+                  <div class="app"><span class="icon i-angular">A</span><small>Angular</small></div>
+                </div>
+                <div class="dock">
+                  <span class="icon i-android">A</span><span class="icon i-studio">AS</span><span class="icon i-git">Git</span><span class="icon i-mail">@</span>
+                </div>
+              </div>
+
+              <div class="browser-ui">
+                <div class="browser-bar">
+                  <span class="browser-dots"><i></i><i></i><i></i></span>
+                  <span class="browser-url">app.wilfred.dev/dashboard</span>
+                </div>
+                <div class="browser-body">
+                  <div class="browser-side"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="browser-main">
+                    <div class="kpis"><div></div><div></div><div></div></div>
+                    <div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="log">
+                      <p><b>GET</b> /api/orders <span>200</span></p>
+                      <p><b>POST</b> /api/payments <span>201</span></p>
+                      <p><b>GET</b> /api/inventory <span>200</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Phone mockup (mobile theme only) -->
-        <div class="hero-phone only-mobile reveal" aria-hidden="true">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="status-bar"><span>9:41</span><span class="status-icons"><i></i><i></i><i></i></span></div>
-            <div class="widget">
-              <p class="widget-time">Wilfred</p>
-              <p class="widget-sub">Mobile Developer · PH</p>
-            </div>
-            <div class="app-grid">
-              <div class="app"><span class="icon i-ramp">QR</span><small>RampGuard</small></div>
-              <div class="app"><span class="icon i-pos">POS</span><small>RapidPOS</small></div>
-              <div class="app"><span class="icon i-kotlin">K</span><small>Kotlin</small></div>
-              <div class="app"><span class="icon i-compose">C</span><small>Compose</small></div>
-              <div class="app"><span class="icon i-flutter">F</span><small>Flutter</small></div>
-              <div class="app"><span class="icon i-firebase">Fb</span><small>Firebase</small></div>
-              <div class="app"><span class="icon i-java">J</span><small>Java</small></div>
-              <div class="app"><span class="icon i-dart">D</span><small>Dart</small></div>
-            </div>
-            <div class="dock">
-              <span class="icon i-android">A</span><span class="icon i-studio">AS</span><span class="icon i-git">Git</span><span class="icon i-mail">@</span>
-            </div>
-          </div>
+        <div class="journey-progress container" aria-hidden="true">
+          <span>Mobile</span>
+          <div class="track"><i></i></div>
+          <span>Full Stack</span>
         </div>
+        <p class="scroll-hint" aria-hidden="true">Scroll to see the journey ↓</p>
       </div>
+    </section>
+
+    <div class="container">
       <div class="marquee reveal" aria-label="Tech I work with">
         <div class="marquee-track">
           <span>.NET 10</span><span>Angular</span><span>Kotlin</span><span>Jetpack Compose</span><span>Flutter</span><span>Firebase</span><span>C#</span><span>Java</span><span>Python</span><span>Claude AI</span><span>SQL</span><span>Go</span>
           <span aria-hidden="true">.NET 10</span><span aria-hidden="true">Angular</span><span aria-hidden="true">Kotlin</span><span aria-hidden="true">Jetpack Compose</span><span aria-hidden="true">Flutter</span><span aria-hidden="true">Firebase</span><span aria-hidden="true">C#</span><span aria-hidden="true">Java</span><span aria-hidden="true">Python</span><span aria-hidden="true">Claude AI</span><span aria-hidden="true">SQL</span><span aria-hidden="true">Go</span>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Work -->
     <section id="work" class="container section">
@@ -204,8 +245,8 @@
       </div>
     </section>
 
-    <!-- Mobile toolkit (mobile theme only) -->
-    <section id="toolkit" class="container section only-mobile">
+    <!-- Mobile toolkit -->
+    <section id="toolkit" class="container section">
       <div class="section-head reveal">
         <p class="kicker">Toolkit</p>
         <h2>What's on my home screen</h2>
@@ -315,7 +356,7 @@
       <div class="contact-card reveal">
         <p class="kicker">Contact</p>
         <h2>Let's build something together.</h2>
-        <p>Open to new opportunities, freelance projects, and collaborations. My inbox is always open.</p>
+        <p>Based in Benguet, Philippines. Open to new opportunities, freelance projects, and collaborations. My inbox is always open.</p>
         <a class="btn primary big" href="mailto:wilfred.a.manuel@gmail.com">wilfred.a.manuel@gmail.com</a>
         <div class="socials">
           <a href="https://github.com/redmanuel1" target="_blank" rel="noopener">GitHub ↗</a>

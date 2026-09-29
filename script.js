@@ -12,24 +12,35 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-// Theme switcher: "default" (Full Stack) or "mobile"
-function applyTheme(theme) {
-  if (theme === 'mobile') document.documentElement.setAttribute('data-theme', 'mobile');
-  else document.documentElement.removeAttribute('data-theme');
+// Journey: map scroll through the pinned section to
+//   --prog  0..1  overall progress (progress bar, stage text)
+//   --m     0..1  morph from mobile to full stack (device shape + page colors)
+const root = document.documentElement;
+const journey = document.querySelector('.journey');
+const stages = document.querySelectorAll('.stage');
+const clamp = (v) => Math.min(1, Math.max(0, v));
+let ticking = false;
 
-  document.querySelectorAll('[data-set-theme]').forEach((btn) => {
-    btn.setAttribute('aria-pressed', String(btn.dataset.setTheme === theme));
-  });
+function updateJourney() {
+  ticking = false;
+  const scrollable = journey.offsetHeight - window.innerHeight;
+  const prog = clamp(-journey.getBoundingClientRect().top / scrollable);
+  const m = clamp((prog - 0.3) / 0.45);
+
+  root.style.setProperty('--prog', prog.toFixed(3));
+  root.style.setProperty('--m', m.toFixed(3));
+
+  const active = prog < 0.12 ? 0 : prog < 0.38 ? 1 : prog < 0.66 ? 2 : 3;
+  stages.forEach((s, i) => s.classList.toggle('is-active', i === active));
 }
 
-applyTheme(document.documentElement.getAttribute('data-theme') === 'mobile' ? 'mobile' : 'default');
+function requestUpdate() {
+  if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(updateJourney);
+  }
+}
 
-document.querySelectorAll('[data-set-theme]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const theme = btn.dataset.setTheme;
-    applyTheme(theme);
-    try { localStorage.setItem('theme', theme); } catch (e) {}
-    // Elements hidden in the previous theme were never observed as visible
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
-  });
-});
+window.addEventListener('scroll', requestUpdate, { passive: true });
+window.addEventListener('resize', requestUpdate);
+updateJourney();
