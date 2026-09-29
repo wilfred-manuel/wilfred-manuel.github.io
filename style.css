@@ -27,6 +27,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Lock the page to vertical scrolling on phones. `clip` (unlike `hidden`) stops
+   sideways dragging on mobile browsers without breaking the sticky nav. */
+@supports (overflow-x: clip) {
+  html, body { overflow-x: clip; }
+}
+
 a { color: inherit; text-decoration: none; }
 strong { color: var(--heading); font-weight: 600; }
 .muted { color: var(--muted); font-size: 0.9rem; }
@@ -359,6 +365,7 @@ strong { color: var(--heading); font-weight: 600; }
 
 /* Bento */
 .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.bento > *, .projects > *, .toolkit > * { min-width: 0; overflow-wrap: break-word; }
 .tile {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -668,11 +675,21 @@ footer {
   .toolkit { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 480px) {
+  .bento { grid-template-columns: 1fr; }
+  .tile-stat strong { font-size: 2.8rem; }
   .nav .nav-cta { display: none; }
   .logo span { display: none; }
   .phone { width: 250px; height: 510px; }
   .toolkit { grid-template-columns: repeat(3, 1fr); padding: 28px 12px; gap: 24px 8px; }
   .toolkit .icon { width: 56px; height: 56px; }
+}
+@media (max-width: 340px) {
+  .container { padding-inline: 16px; }
+  .hero-grid > * { min-width: 0; }
+  .phone { width: 220px; height: 450px; padding: 12px; }
+  .app-grid { gap: 14px 4px; }
+  .phone .icon { width: 40px; height: 40px; font-size: 0.8rem; }
+  .btn.big { max-width: 100%; font-size: 0.8rem; padding: 12px 16px; overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) {
   .phone { animation: none; }
