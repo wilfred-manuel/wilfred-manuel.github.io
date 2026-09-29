@@ -418,7 +418,7 @@ strong { color: var(--heading); font-weight: 600; }
 }
 .contact-card h2 { margin-inline: auto; }
 .contact-card > p:not(.kicker) { max-width: 480px; margin: 16px auto 0; }
-.socials { display: flex; justify-content: center; gap: 28px; margin-top: 28px; }
+.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-top: 28px; }
 .socials a { color: var(--heading); font-weight: 500; transition: color 0.2s; }
 .socials a:hover { color: var(--cyan); }
 
