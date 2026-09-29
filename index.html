@@ -4,204 +4,246 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wilfred A. Manuel — Full Stack Developer</title>
-  <meta name="description" content="Wilfred A. Manuel, full stack developer with 7+ years building Android apps, .NET APIs, Angular web apps, and Python data tools.">
+  <meta name="description" content="Wilfred A. Manuel, full stack developer with 7+ years building Android apps, .NET APIs, Angular web apps, and Flutter mobile apps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg-glow" aria-hidden="true"></div>
+
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#top" class="logo">WM<span>.</span></a>
+      <a href="#top" class="logo">wilfred<span>.dev</span></a>
       <nav>
+        <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <a href="#career">Career</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
+    <!-- Hero -->
     <section class="hero container">
-      <p class="mono eyebrow">Hi, my name is</p>
-      <h1>Wilfred A. Manuel.</h1>
-      <h2>I build mobile apps, web dashboards, and the APIs behind them.</h2>
-      <p class="lead">
-        Software engineer from Benguet, Philippines with 7+ years of experience across
-        Android, full-stack web, and Python data work. Currently a Full Stack Developer at
-        <strong>RapidPOS</strong>, building with .NET 10, Angular, and Kotlin/Jetpack Compose
-        for an Android POS app.
+      <div class="badge reveal"><span class="dot"></span> Full Stack Developer at RapidPOS</div>
+      <h1 class="reveal">
+        Hi, I'm Wilfred.<br>
+        I build <span class="gradient-text">apps people use</span><br>
+        every day.
+      </h1>
+      <p class="hero-sub reveal">
+        7+ years shipping Android apps, .NET APIs, Angular web apps, and Flutter mobile apps,
+        from POS systems to school attendance tracking. Based in Benguet, Philippines.
       </p>
-      <div class="cta">
-        <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn" href="#experience">See my work</a>
+      <div class="cta reveal">
+        <a class="btn primary" href="#work">View my work <span aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <div class="marquee reveal" aria-label="Tech I work with">
+        <div class="marquee-track">
+          <span>.NET 10</span><span>Angular</span><span>Kotlin</span><span>Jetpack Compose</span><span>Flutter</span><span>Firebase</span><span>C#</span><span>Java</span><span>Python</span><span>Claude AI</span><span>SQL</span><span>Go</span>
+          <span aria-hidden="true">.NET 10</span><span aria-hidden="true">Angular</span><span aria-hidden="true">Kotlin</span><span aria-hidden="true">Jetpack Compose</span><span aria-hidden="true">Flutter</span><span aria-hidden="true">Firebase</span><span aria-hidden="true">C#</span><span aria-hidden="true">Java</span><span aria-hidden="true">Python</span><span aria-hidden="true">Claude AI</span><span aria-hidden="true">SQL</span><span aria-hidden="true">Go</span>
+        </div>
       </div>
     </section>
 
+    <!-- Work -->
+    <section id="work" class="container section">
+      <div class="section-head reveal">
+        <p class="kicker">Selected work</p>
+        <h2>Things I've built</h2>
+      </div>
+
+      <div class="projects">
+        <!-- RampGuard -->
+        <article class="project featured reveal">
+          <div class="project-visual visual-ramp">
+            <svg viewBox="0 0 200 200" class="qr" aria-hidden="true">
+              <rect x="10" y="10" width="50" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="8"/>
+              <rect x="26" y="26" width="18" height="18" rx="2" fill="currentColor"/>
+              <rect x="140" y="10" width="50" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="8"/>
+              <rect x="156" y="26" width="18" height="18" rx="2" fill="currentColor"/>
+              <rect x="10" y="140" width="50" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="8"/>
+              <rect x="26" y="156" width="18" height="18" rx="2" fill="currentColor"/>
+              <g fill="currentColor">
+                <rect x="75" y="12" width="14" height="14" rx="2"/><rect x="105" y="12" width="14" height="14" rx="2"/>
+                <rect x="90" y="40" width="14" height="14" rx="2"/><rect x="75" y="75" width="14" height="14" rx="2"/>
+                <rect x="105" y="75" width="14" height="14" rx="2"/><rect x="140" y="75" width="14" height="14" rx="2"/>
+                <rect x="170" y="90" width="14" height="14" rx="2"/><rect x="12" y="90" width="14" height="14" rx="2"/>
+                <rect x="40" y="105" width="14" height="14" rx="2"/><rect x="90" y="105" width="14" height="14" rx="2"/>
+                <rect x="140" y="140" width="14" height="14" rx="2"/><rect x="170" y="170" width="14" height="14" rx="2"/>
+                <rect x="105" y="140" width="14" height="14" rx="2"/><rect x="75" y="170" width="14" height="14" rx="2"/>
+                <rect x="120" y="170" width="14" height="14" rx="2"/>
+              </g>
+            </svg>
+            <div class="scan-line"></div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">WCC Aeronautics School · Mobile app</p>
+            <h3>RampGuard</h3>
+            <p>
+              A QR-based attendance app for WCC Aeronautics School in Pangasinan. Students scan a
+              QR code each time they go in and out of the ramp, giving the school an accurate
+              log of who is on the ramp. Built in Flutter and published on the Apple App Store,
+              where it ran for a year.
+            </p>
+            <ul class="stack"><li>Flutter</li><li>Dart</li><li>QR scanning</li><li>iOS App Store</li></ul>
+          </div>
+        </article>
+
+        <!-- Inventory -->
+        <article class="project reveal">
+          <div class="project-visual visual-inventory">
+            <div class="mock-window">
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-row w80"></div>
+              <div class="mock-grid">
+                <div></div><div></div><div></div>
+              </div>
+              <div class="mock-row w60"></div>
+              <div class="mock-row w70"></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">WCC Aeronautics School · Web app</p>
+            <h3>School Supplies Inventory &amp; Ordering</h3>
+            <p>
+              An inventory system for the school's supplies paired with an ordering portal for
+              students. Staff track stock levels, and students browse and order supplies online.
+            </p>
+            <ul class="stack"><li>Angular</li><li>Firebase</li><li>TypeScript</li></ul>
+          </div>
+        </article>
+
+        <!-- Wedding -->
+        <article class="project reveal">
+          <div class="project-visual visual-wedding">
+            <svg viewBox="0 0 120 80" class="rings" aria-hidden="true">
+              <circle cx="47" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
+              <circle cx="73" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
+              <path d="M73 8 l5 6 -5 6 -5 -6z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">Personal · Website</p>
+            <h3>Our Wedding Website</h3>
+            <p>
+              A wedding website I designed and built together with my wife, giving our guests
+              everything they needed to know about our big day in one place.
+            </p>
+            <ul class="stack"><li>Web</li><li>Responsive design</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About (bento) -->
     <section id="about" class="container section">
-      <h3 class="section-title"><span class="mono">01.</span> About me</h3>
-      <div class="about">
-        <div>
+      <div class="section-head reveal">
+        <p class="kicker">About</p>
+        <h2>A developer who works across the whole stack</h2>
+      </div>
+
+      <div class="bento">
+        <div class="tile tile-bio reveal">
           <p>
-            I started my career as an Android developer in 2018 and have since worked across the
-            stack: building CRM and payment dashboards, implementing RESTful APIs in C# and .NET,
-            managing data in Snowflake, and leading code reviews and training for other developers.
+            I started as an Android developer in 2018 and grew into full stack work: CRM and payment
+            dashboards, RESTful APIs in C# and .NET, and data pipelines in Snowflake. Along the way
+            I led code reviews and trained other developers.
           </p>
           <p>
-            These days I work across the whole product at RapidPOS: .NET 10 APIs on the backend,
-            Angular on the web, and a Kotlin and Jetpack Compose Android POS app, using Claude as
-            part of my everyday development workflow. Before that, I kept production Android apps
-            healthy at TIR and built Python tools for data visualization and AI video analysis.
-          </p>
-          <p>
-            I have a BS in Computer Science from the University of the Cordilleras, where I competed
-            in the Philippine Programming Competition (4th place). Before that, I studied Social
-            Sciences (Economics) at UP Baguio.
+            Today at <strong>RapidPOS</strong> I work on every layer of the product: .NET 10 APIs,
+            Angular on the web, and an Android POS app in Kotlin and Jetpack Compose. I use Claude
+            as part of my everyday workflow.
           </p>
         </div>
-        <ul class="stats">
-          <li><strong>7+</strong><span>years in software</span></li>
-          <li><strong>6</strong><span>roles across mobile, web, and data</span></li>
-          <li><strong>4th</strong><span>Philippine Programming Competition</span></li>
-        </ul>
+        <div class="tile tile-stat reveal">
+          <strong>7+</strong>
+          <span>years building software</span>
+        </div>
+        <div class="tile tile-stat accent reveal">
+          <strong>4th</strong>
+          <span>place, Philippine Programming Competition</span>
+        </div>
+        <div class="tile tile-stack reveal">
+          <h4>Mobile</h4>
+          <ul class="stack"><li>Kotlin</li><li>Jetpack Compose</li><li>Java</li><li>Flutter</li><li>Dart</li><li>Firebase</li></ul>
+        </div>
+        <div class="tile tile-stack reveal">
+          <h4>Web &amp; Backend</h4>
+          <ul class="stack"><li>.NET 10</li><li>C#</li><li>Angular</li><li>JavaScript</li><li>REST APIs</li><li>Go</li></ul>
+        </div>
+        <div class="tile tile-stack reveal">
+          <h4>Data, AI &amp; Tools</h4>
+          <ul class="stack"><li>Claude (Anthropic)</li><li>Python</li><li>Streamlit</li><li>SQL</li><li>Snowflake</li><li>Git</li><li>CI/CD</li></ul>
+        </div>
+        <div class="tile tile-edu reveal">
+          <h4>Education</h4>
+          <p><strong>BS Computer Science</strong><br>University of the Cordilleras, Baguio · 2018</p>
+          <p class="muted">Also studied Social Sciences (Economics) at UP Baguio</p>
+        </div>
       </div>
     </section>
 
-    <section id="experience" class="container section">
-      <h3 class="section-title"><span class="mono">02.</span> Experience</h3>
-      <ol class="timeline">
-        <li>
-          <p class="mono date">Apr 2026 — Present</p>
-          <h4>Full Stack Developer <span>@ RapidPOS</span></h4>
-          <ul>
-            <li>Build backend services and REST APIs with .NET 10</li>
-            <li>Develop web front ends in Angular</li>
-            <li>Build the Android POS app with Kotlin and Jetpack Compose</li>
-            <li>Use Claude (Anthropic) for AI-assisted development</li>
-          </ul>
+    <!-- Career -->
+    <section id="career" class="container section">
+      <div class="section-head reveal">
+        <p class="kicker">Career</p>
+        <h2>Where I've worked</h2>
+      </div>
+
+      <ol class="career">
+        <li class="reveal">
+          <span class="years">2026 — Now</span>
+          <div>
+            <h3>Full Stack Developer <span>RapidPOS</span></h3>
+            <p>.NET 10 backend, Angular frontend, and an Android POS app built with Kotlin and Jetpack Compose.</p>
+          </div>
         </li>
-        <li>
-          <p class="mono date">Jan 2024 — Apr 2026</p>
-          <h4>Software Engineer <span>@ Total Integrated Resources Solutions</span></h4>
-          <ul>
-            <li>Maintain and ship updates for production Android applications</li>
-            <li>Build data visualization apps with Python and Streamlit</li>
-            <li>Develop AI-powered video content analysis in Python</li>
-          </ul>
+        <li class="reveal">
+          <span class="years">2024 — 2026</span>
+          <div>
+            <h3>Software Engineer <span>Total Integrated Resources Solutions</span></h3>
+            <p>Maintained production Android apps and built Python tools for data visualization (Streamlit) and AI video content analysis.</p>
+          </div>
         </li>
-        <li>
-          <p class="mono date">Sep 2022 — Sep 2023</p>
-          <h4>Senior Android Developer <span>@ Giant International Software Stations</span></h4>
-          <ul>
-            <li>Delivered Jira tickets on schedule in an agile team</li>
-            <li>Ran code reviews and managed source in GitLab</li>
-            <li>Worked with other mobile developers to keep features in parity across platforms</li>
-          </ul>
-        </li>
-        <li>
-          <p class="mono date">May 2021 — Sep 2022</p>
-          <h4>Senior Web Developer <span>@ Giant International Software Stations</span></h4>
-          <ul>
-            <li>Built payment dashboards with JavaScript, HTML, and CSS</li>
-            <li>Wrote automated tests with Mocha</li>
-            <li>Trained and mentored junior web developers; ran code reviews and cleanups</li>
-          </ul>
-        </li>
-        <li>
-          <p class="mono date">Dec 2019 — May 2021</p>
-          <h4>Full Stack Web Developer <span>@ Giant International Software Stations</span></h4>
-          <ul>
-            <li>Built CRM dashboards with JavaScript, HTML, and CSS</li>
-            <li>Implemented RESTful APIs with C# and .NET 5</li>
-            <li>Maintained data in Snowflake and fixed bugs in existing web apps</li>
-          </ul>
-        </li>
-        <li>
-          <p class="mono date">Nov 2018 — Dec 2019</p>
-          <h4>Android Mobile Developer <span>@ Giant International Software Stations</span></h4>
-          <ul>
-            <li>Maintained and extended a Java Android CRM application</li>
-            <li>Implemented RESTful APIs with C# and .NET 5</li>
-            <li>Earned Encompass API and Encompass Fusion 1 &amp; 2 certifications</li>
-          </ul>
+        <li class="reveal">
+          <span class="years">2018 — 2023</span>
+          <div>
+            <h3>Android → Full Stack → Senior Developer <span>Giant International Software Stations</span></h3>
+            <p>
+              Five years growing from Android developer to senior roles: built CRM and payment dashboards,
+              .NET 5 REST APIs, and Snowflake data work; led code reviews, trained new developers,
+              and later led Android work as a Senior Android Developer.
+            </p>
+          </div>
         </li>
       </ol>
     </section>
 
-    <section id="skills" class="container section">
-      <h3 class="section-title"><span class="mono">03.</span> Skills</h3>
-      <div class="skills">
-        <div class="card">
-          <h4>Mobile</h4>
-          <ul class="tags">
-            <li>Android</li><li>Kotlin</li><li>Jetpack Compose</li><li>Java</li><li>Flutter</li><li>Dart</li><li>Firebase</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h4>Web &amp; Backend</h4>
-          <ul class="tags">
-            <li>C#</li><li>.NET 10</li><li>Angular</li><li>AngularJS</li><li>JavaScript</li><li>HTML/CSS</li><li>REST APIs</li><li>Go</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h4>Data &amp; AI</h4>
-          <ul class="tags">
-            <li>Claude (Anthropic)</li><li>Python</li><li>Streamlit</li><li>SQL</li><li>SQLite</li><li>Snowflake</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h4>Tools &amp; Practices</h4>
-          <ul class="tags">
-            <li>Git</li><li>SVN</li><li>GitLab</li><li>CI/CD</li><li>Jira</li><li>Code review</li><li>Mocha</li>
-          </ul>
+    <!-- Contact -->
+    <section id="contact" class="container section">
+      <div class="contact-card reveal">
+        <p class="kicker">Contact</p>
+        <h2>Let's build something together.</h2>
+        <p>Open to new opportunities, freelance projects, and collaborations. My inbox is always open.</p>
+        <a class="btn primary big" href="mailto:wilfred.a.manuel@gmail.com">wilfred.a.manuel@gmail.com</a>
+        <div class="socials">
+          <a href="https://github.com/redmanuel1" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/manuelwilfred/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
-    </section>
-
-    <section id="education" class="container section">
-      <h3 class="section-title"><span class="mono">04.</span> Education</h3>
-      <div class="edu">
-        <div class="card">
-          <p class="mono date">2015 — 2018</p>
-          <h4>BS Computer Science</h4>
-          <p>University of the Cordilleras, Baguio</p>
-          <p class="muted">Major in Digital Arts · 4th place, Philippine Programming Competition</p>
-        </div>
-        <div class="card">
-          <p class="mono date">2009 — 2012</p>
-          <h4>Social Sciences, Economics</h4>
-          <p>University of the Philippines Baguio</p>
-          <p class="muted">Undergraduate studies</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="container section contact">
-      <h3 class="section-title center"><span class="mono">05.</span> Get in touch</h3>
-      <p class="lead">
-        I'm open to new opportunities and collaborations. Whether it's a role, a project,
-        or just a question, my inbox is open.
-      </p>
-      <a class="btn primary big" href="mailto:wilfred.a.manuel@gmail.com">Say hello</a>
-      <p class="links">
-        <a href="mailto:wilfred.a.manuel@gmail.com">wilfred.a.manuel@gmail.com</a>
-        <span>·</span>
-        <a href="https://github.com/redmanuel1" target="_blank" rel="noopener">GitHub</a>
-        <span>·</span>
-        <a href="https://www.linkedin.com/in/manuelwilfred/" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
     </section>
   </main>
 
   <footer class="container">
-    <p class="mono">© <span id="year"></span> Wilfred A. Manuel</p>
+    <p>© <span id="year"></span> Wilfred A. Manuel</p>
+    <p class="muted">Built with HTML &amp; CSS, hosted on GitHub Pages</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
