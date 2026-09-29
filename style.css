@@ -627,6 +627,7 @@ footer {
 .i-api { background: linear-gradient(135deg, #334155, #64748b); font-size: 0.85rem; }
 .i-net { background: linear-gradient(135deg, #512bd4, #9b6bff); }
 .i-store { background: linear-gradient(135deg, #0a84ff, #5ac8fa); }
+.i-play { background: linear-gradient(135deg, #01875f, #34a853); font-size: 1.1rem; }
 .i-claude { background: linear-gradient(135deg, #d97757, #f0a987); font-size: 1.3rem; }
 
 /* Toolkit grid */
