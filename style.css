@@ -273,9 +273,89 @@ strong { color: var(--heading); font-weight: 600; }
 .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .mock-grid div { height: 44px; border-radius: 8px; background: rgba(255, 255, 255, 0.18); }
 
+/* Inventory animation: items get picked, stock drains and restocks, order toast pops */
+.mock-window { position: relative; }
+.mock-grid div { animation: pick 4.5s ease-in-out infinite; }
+.mock-grid div:nth-child(2) { animation-delay: 0.5s; }
+.mock-grid div:nth-child(3) { animation-delay: 1s; }
+@keyframes pick {
+  0%, 20%, 100% { background: rgba(255, 255, 255, 0.18); transform: none; box-shadow: none; }
+  8% { background: rgba(255, 255, 255, 0.45); transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25); }
+}
+.stock { height: 10px; border-radius: 5px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+.stock span {
+  display: block;
+  height: 100%;
+  width: 80%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #a5f3fc, #c4b5fd);
+  animation: stock 4.5s ease-in-out infinite;
+}
+.stock + .stock span { width: 60%; animation-delay: 0.6s; }
+@keyframes stock {
+  0%, 100% { transform: scaleX(1); transform-origin: left; }
+  45% { transform: scaleX(0.35); transform-origin: left; }
+  60% { transform: scaleX(0.35); transform-origin: left; }
+}
+.mock-toast {
+  position: absolute;
+  right: -14px;
+  bottom: -16px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #14532d;
+  background: #bbf7d0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: rotate(3deg);
+  animation: toast 4.5s ease-in-out infinite;
+}
+@keyframes toast {
+  0%, 25% { opacity: 0; translate: 0 10px; }
+  32%, 70% { opacity: 1; translate: 0 0; }
+  80%, 100% { opacity: 0; translate: 0 -6px; }
+}
+
 /* Wedding visual */
 .visual-wedding { background: linear-gradient(135deg, #831843, #f472b6); color: rgba(255, 255, 255, 0.92); }
-.rings { width: 150px; filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3)); }
+.rings { position: relative; width: 150px; filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3)); }
+.ring-left, .ring-right { transform-box: fill-box; animation-duration: 5s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+.ring-left { animation-name: ring-left; }
+.ring-right { animation-name: ring-right; }
+@keyframes ring-left {
+  0%, 100% { transform: translateX(-12px) rotate(-8deg); }
+  40%, 70% { transform: translateX(0) rotate(0); }
+}
+@keyframes ring-right {
+  0%, 100% { transform: translateX(12px) rotate(8deg); }
+  40%, 70% { transform: translateX(0) rotate(0); }
+}
+.diamond { transform-box: fill-box; transform-origin: center; animation: sparkle 5s ease-in-out infinite; }
+@keyframes sparkle {
+  0%, 38%, 100% { transform: scale(1); opacity: 0.9; }
+  45% { transform: scale(1.6); opacity: 1; filter: drop-shadow(0 0 6px #fff); }
+  55% { transform: scale(1); }
+}
+.hearts { position: absolute; inset: 0; pointer-events: none; }
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  animation: float-up 7s linear infinite;
+}
+.hearts span:nth-child(1) { left: 12%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 28%; animation-delay: 2.5s; font-size: 10px; }
+.hearts span:nth-child(3) { left: 45%; animation-delay: 4.8s; font-size: 18px; }
+.hearts span:nth-child(4) { left: 64%; animation-delay: 1.2s; font-size: 11px; }
+.hearts span:nth-child(5) { left: 80%; animation-delay: 3.6s; }
+.hearts span:nth-child(6) { left: 90%; animation-delay: 5.9s; font-size: 9px; }
+@keyframes float-up {
+  0% { transform: translateY(0) rotate(-10deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-260px) rotate(15deg); opacity: 0; }
+}
 
 /* Bento */
 .bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -358,7 +438,9 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .marquee-track, .scan-line, .dot { animation: none; }
+  .marquee-track, .scan-line, .dot, .mock-grid div, .stock span, .mock-toast,
+  .ring-left, .ring-right, .diamond, .hearts span { animation: none; }
+  .hearts { display: none; }
 }
 
 /* Responsive */

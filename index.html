@@ -160,8 +160,9 @@
               <div class="mock-grid">
                 <div></div><div></div><div></div>
               </div>
-              <div class="mock-row w60"></div>
-              <div class="mock-row w70"></div>
+              <div class="stock"><span></span></div>
+              <div class="stock"><span></span></div>
+              <div class="mock-toast" aria-hidden="true">✓ Order placed</div>
             </div>
           </div>
           <div class="project-body">
@@ -178,10 +179,15 @@
         <!-- Wedding -->
         <article class="project reveal">
           <div class="project-visual visual-wedding">
+            <div class="hearts" aria-hidden="true">
+              <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+            </div>
             <svg viewBox="0 0 120 80" class="rings" aria-hidden="true">
-              <circle cx="47" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
-              <circle cx="73" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
-              <path d="M73 8 l5 6 -5 6 -5 -6z" fill="currentColor"/>
+              <circle class="ring-left" cx="47" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
+              <g class="ring-right">
+                <circle cx="73" cy="44" r="24" fill="none" stroke="currentColor" stroke-width="5"/>
+                <path class="diamond" d="M73 8 l5 6 -5 6 -5 -6z" fill="currentColor"/>
+              </g>
             </svg>
           </div>
           <div class="project-body">
