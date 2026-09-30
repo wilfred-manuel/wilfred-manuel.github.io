@@ -496,7 +496,8 @@ footer {
 /* ============================================================
    Journey: pinned hero, phone morphs into a browser as --m goes 0 → 1
    ============================================================ */
-.journey { height: 400vh; }
+/* Height sets how much scrolling the journey takes: (height - 100vh) of scroll */
+.journey { height: 300vh; }
 .journey-sticky {
   position: sticky;
   top: 0;
@@ -795,6 +796,7 @@ footer {
   .scroll-hint { display: none; }
 }
 @media (max-width: 720px) {
+  .journey { height: 200vh; height: 200svh; }
   .journey-sticky { padding-top: 88px; }
   .journey h1 { font-size: 1.85rem; margin-top: 14px; }
   .journey .badge { font-size: 0.75rem; }
